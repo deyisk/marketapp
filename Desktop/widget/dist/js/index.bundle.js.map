@@ -1,0 +1,1 @@
+{"version":3,"file":"js/index.bundle.js","mappings":";;;AAAyB;AACU","sources":["webpack://widget/./src/index.js"],"sourcesContent":["import \"/src/style.scss\";\nimport \"./components/_widget.scss\";\n"],"names":[],"sourceRoot":""}
