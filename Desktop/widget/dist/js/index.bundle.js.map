@@ -1,1 +1,1 @@
-{"version":3,"file":"js/index.bundle.js","mappings":";;;AAAyB;AACU","sources":["webpack://widget/./src/index.js"],"sourcesContent":["import \"/src/style.scss\";\nimport \"./components/_widget.scss\";\n"],"names":[],"sourceRoot":""}
+{"version":3,"file":"js/index.bundle.js","mappings":";;;AAAgC;AACP","sources":["webpack://widget/./src/index.js"],"sourcesContent":["import \"/src/scss/_widget.scss\";\nimport \"/src/style.scss\";\n"],"names":[],"sourceRoot":""}

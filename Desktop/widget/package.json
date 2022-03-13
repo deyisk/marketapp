@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
+    "build-sass": "node-sass --include-path scss scss/_widget.scss css/style.css",
+
     "dev": "webpack serve --open --mode development",
     "build:watch": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"

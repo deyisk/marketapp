@@ -1,0 +1,45 @@
+//CARD SCSS
+//====================
+
+//variables
+
+$card-width: 300px;
+$card-height: 100px;
+
+//fixed
+
+%container-fixed {
+  width: $card-width;
+  height: $card-height;
+  background-color: sandybrown;
+
+  %card-fixed {
+    background-color: blue;
+
+    &__img--top {
+      width: $card-width;
+      height: $card-height;
+    }
+
+    &__body,
+    &__title,
+    &__text {
+      background-color: red;
+    }
+  }
+}
+
+// button.scss
+.btn {
+  &--primary {
+  }
+}
+
+//controller
+.card {
+  @extend %card-fixed;
+}
+
+.container {
+  @extend %container-fixed;
+}

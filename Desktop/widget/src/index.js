@@ -1,2 +1,2 @@
-import "/src/style.scss";
-import "./components/_widget.scss";
+import "/src/scss/_widget.scss";
+import "/src/styles.scss";
