@@ -1,0 +1,46 @@
+//FORM SCSS
+//==================
+
+//Form Variables
+//==================
+
+//Form Fixed
+//==================
+
+%form-fixed {
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+}
+%form-header-fixed {
+  background-color: rgb(157, 212, 104);
+  text-align: center;
+}
+
+%form-body-fixed {
+  background-color: rgb(173, 235, 188);
+  text-align: center;
+}
+
+%form-footer-fixed {
+  text-align: center;
+}
+
+//Form Controller
+//==================
+
+.form {
+  @extend %form-fixed;
+
+  &-header {
+    @extend %form-header-fixed;
+  }
+
+  &-body {
+    @extend %form-body-fixed;
+  }
+
+  &-footer {
+    @extend %form-footer-fixed;
+  }
+}

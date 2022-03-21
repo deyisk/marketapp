@@ -1,45 +1,61 @@
-//CARD SCSS
-//====================
+// CARD SCSS
+//===========================================
 
-//variables
-
+//Card Variables
+//==========================
 $card-width: 300px;
-$card-height: 100px;
+$card-height: 200px;
+$card-border: 20px;
 
-//fixed
+// Card Fixed
+//==========================
 
-%container-fixed {
+%card-fixed {
   width: $card-width;
-  height: $card-height;
-  background-color: sandybrown;
-
-  %card-fixed {
-    background-color: blue;
-
-    &__img--top {
-      width: $card-width;
-      height: $card-height;
-    }
-
-    &__body,
-    &__title,
-    &__text {
-      background-color: red;
-    }
-  }
+  margin: auto;
+}
+//Card Header Fixed
+%card-header-fixed {
+  width: $card-width;
+}
+// Card Header Figure Fixed
+%card-header-figure-fixed {
+  width: $card-width;
 }
 
-// button.scss
-.btn {
-  &--primary {
-  }
+//Card Body Fixed
+%card-body-fixed {
+  background-color: #9ac99e;
+  border-radius: $card-border;
+  height: 60px;
+  text-align: center;
 }
 
-//controller
+//Card Footer Fixed
+%card-footer-fixed {
+  text-align: center;
+  background-color: red;
+}
+
+//Card Controller
+//================================
+
 .card {
   @extend %card-fixed;
-}
 
-.container {
-  @extend %container-fixed;
+  &-header {
+    @extend %card-header-fixed;
+  }
+
+  &-figure {
+    @extend %card-header-figure-fixed;
+  }
+
+  &-body {
+    @extend %card-body-fixed;
+  }
+
+  &-footer {
+    @extend %card-footer-fixed;
+  }
 }
