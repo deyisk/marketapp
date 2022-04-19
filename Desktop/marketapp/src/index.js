@@ -1,0 +1,9 @@
+import "./style.scss";
+import "./assets/images/index-hero.jpg";
+import "./assets/images/widget-img-01.jpg";
+import "./assets/images/index-hero-big.jpg";
+import "./assets/images/apple.png";
+import "./assets/images/tomato.png";
+import "./assets/images/preserves.png";
+import "bootstrap/js/dist/modal";
+import "bootstrap/js/dist/carousel";

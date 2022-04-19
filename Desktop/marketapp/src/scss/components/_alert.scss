@@ -1,0 +1,55 @@
+// ==========================================================================
+// CONTAINER SCSS
+// v1.0
+// ==========================================================================
+// Alert variables
+// ==========================================================================
+$alert-height: 60px;
+$alert-border-radius: 6px;
+$alert-font-size: 14px;
+$alert-space: 16px;
+
+// Alert syntax
+// class-name : value1:bg, value2:text-color
+// ==========================================================================
+$alert-colors: (
+        "success" : (#22c55e, #fff),
+        "warning" : (#fde047, #333),
+        "danger" : (#dc2626, #fff),
+        "info" : (#0ea5e9, #fff),
+        "dark" : (#18181b, #fff),
+        "white" : (#fff, #fff)
+);
+
+// Alert Fixed
+// ==========================================================================
+%alert-fixed {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  height: $alert-height;
+  border-radius: $alert-border-radius;
+  font-size: $alert-font-size;
+  font-weight: 400;
+  padding: 0 $alert-space;
+}
+
+.alert + .alert {
+  margin-top: 15px;
+}
+
+// Alert control
+// ==========================================================================
+.alert {
+  @extend %alert-fixed;
+
+  @each $key, $value in $alert-colors {
+    // default
+    &-#{$key} {
+      border: 1px solid nth($value, 1);
+      background-color: lighten(nth($value, 1), 33%);
+      color: darken(nth($value, 1), 15%);
+    }
+  }
+}

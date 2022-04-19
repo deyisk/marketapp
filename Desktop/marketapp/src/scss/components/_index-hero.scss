@@ -1,0 +1,86 @@
+// ==========================================================================
+// INDEX HERO SCSS
+// v1.0
+// ==========================================================================
+// Index hero variables
+// ==========================================================================
+$hero-left-width: 42%;
+
+// Index hero fixed
+// ==========================================================================
+%hero,
+%hero-left,
+%hero-right {
+  display: flex;
+  align-items: center;
+}
+
+%hero {
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  margin-top: 3rem;
+}
+
+%hero-left {
+  flex-direction: column;
+  justify-content: flex-start;
+  width: $hero-left-width;
+}
+
+%hero-right {
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - #{$hero-left-width});
+}
+
+%hero-figure {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+%hero-content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  padding-right: 15px;
+
+  span {
+    font-size: 18px;
+    color: #333333;
+  }
+
+  button {
+    margin-top: 42px;
+  }
+}
+
+// Index hero controller
+// ==========================================================================
+.hero {
+  @extend %hero;
+
+  &-left {
+    @extend %hero-left;
+  }
+
+  &-right {
+    @extend %hero-right;
+  }
+
+  &-figure {
+    @extend %hero-figure;
+  }
+
+  &-content {
+    @extend %hero-content;
+  }
+}

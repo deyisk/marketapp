@@ -1,0 +1,43 @@
+{
+  "name": "marketapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve --open --mode development",
+    "build": "webpack --mode production",
+    "build:watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://lenof@bitbucket.org/lenof/marketapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/lenof/marketapp/issues"
+  },
+  "homepage": "https://bitbucket.org/lenof/marketapp#readme",
+  "devDependencies": {
+    "css-loader": "^6.6.0",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "postcss": "^8.4.6",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.4.1",
+    "sass": "^1.49.7",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.69.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}

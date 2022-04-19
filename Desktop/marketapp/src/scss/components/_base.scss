@@ -1,0 +1,39 @@
+// ==========================================================================
+// BASE SCSS
+// v1.0
+// ==========================================================================
+// Body Fixed
+// ==========================================================================
+body {
+  font-size: 14px;
+  color:#1c1917;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Nav, Link
+// ==========================================================================
+%fix-nav-items {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  @extend %fix-nav-items;
+  list-style: none;
+
+  li {
+    @extend %fix-nav-items;
+
+    a {
+      color: inherit;
+      font-size: inherit;
+      text-decoration: none;
+    }
+  }
+}
+

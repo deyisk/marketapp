@@ -1,0 +1,135 @@
+// ==========================================================================
+// MAIN HEADER SCSS
+// v1.0
+// ==========================================================================
+// Variables
+// ==========================================================================
+// Fix Controller
+// ==========================================================================
+%main-header-fix-controller {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  position: relative;
+  z-index: 99;
+}
+
+// Main Header Fixed
+// ==========================================================================
+%main-header-fixed {
+  display: flex;
+  width: 100%;
+  height: 86px;
+}
+
+// Main Header Logo Fixed
+// ==========================================================================
+%main-header-logo-fixed {
+  span {
+    font-size: 26px;
+    font-weight: 900;
+    color: #3a3a3a;
+  }
+}
+
+// Main Header Fixed
+// ==========================================================================
+%main-header-left-fixed {
+  justify-content: flex-start;
+}
+
+// Main Header Fixed
+// ==========================================================================
+%main-header-right-fixed {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+
+  .btn {
+    margin-left: 10px;
+  }
+}
+
+// Main Header Nav Fixed
+// ==========================================================================
+%main-header-nav-fixed {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+}
+
+// Main Header Nav Fixed
+// ==========================================================================
+%main-header-nav-items-fixed {
+  a {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    transition: all .3s ease;
+
+    &:before {
+      display: none;
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      height: 1.6px;
+      width: 0;
+      background-color: #3a3a3a;
+      opacity: 0;
+      transform: translate(-50%);
+    }
+
+    &:hover {
+      opacity: .8;
+      &:before {
+        display: block;
+        width: 40px;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.main-header-nav-item + .main-header-nav-item {
+  margin-left: 10px;
+}
+
+// Main Header Controller
+// ==========================================================================
+.main-header {
+  @extend %main-header-fixed;
+  // Logo
+  &-logo {
+    @extend %main-header-logo-fixed;
+  }
+
+  // fix
+  &-left,
+  &right {
+    @extend %main-header-fix-controller;
+  }
+
+  // left
+  &-left {
+    @extend %main-header-left-fixed;
+  }
+
+  // right
+  &-right {
+    @extend %main-header-right-fixed;
+  }
+
+  // nav
+  &-nav {
+    @extend %main-header-nav-fixed;
+    // item
+    &-item {
+      @extend %main-header-nav-items-fixed;
+    }
+  }
+}

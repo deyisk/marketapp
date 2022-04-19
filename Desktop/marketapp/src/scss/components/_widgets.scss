@@ -1,0 +1,126 @@
+// ==========================================================================
+// WIDGETS SCSS
+// v1.0
+// ==========================================================================
+// Widgets variables
+// ==========================================================================
+$widgets-colors: (
+        "success" : (#d1fae5, #1c1917),
+        "warning" : (#fde68a, #1c1917),
+        "danger" : (#fca5a5, #1c1917),
+);
+$widget-border-radius: 46px;
+
+// Widgets fixed
+// ==========================================================================
+%widget-fixed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+  min-height: 222px;
+  width: 96px;
+  padding: 12px;
+  border-radius: $widget-border-radius;
+  margin-top: 15px;
+}
+
+%widget-figure-fixed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  position: relative;
+
+  &:before {
+    width: 48px;
+    height: 48px;
+    content: '';
+    position: absolute;
+    left: 5px;
+    bottom: -5px;
+    z-index: 1;
+    border-radius: 100%;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    z-index: 2;
+  }
+}
+
+%widget-body-fixed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+%widget-footer-fixed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 4px 4px $widget-border-radius $widget-border-radius;
+
+  span {
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  small {
+
+  }
+}
+
+// Widgets controller
+// ==========================================================================
+.widgets {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+
+  .widget + .widget {
+    margin-left: 15px;
+  }
+}
+
+.widget {
+  @extend %widget-fixed;
+
+  @each $key, $value in $widgets-colors {
+    &-#{$key} {
+      background-color: nth($value, 1);
+      color: nth($value, 2);
+
+      .widget-figure {
+        &:before {
+          background-color: lighten(nth($value, 1), 3%);
+        }
+      }
+    }
+  }
+
+  &-figure {
+    @extend %widget-figure-fixed;
+  }
+
+  &-body {
+    @extend %widget-body-fixed;
+  }
+
+  &-footer {
+    @extend %widget-footer-fixed;
+  }
+}

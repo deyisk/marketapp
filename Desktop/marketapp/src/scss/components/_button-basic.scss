@@ -1,0 +1,70 @@
+// ==========================================================================
+// CONTAINER SCSS
+// v1.0
+// ==========================================================================
+// Button variables
+// ==========================================================================
+$button-height:           40px;
+$button-border-radius:    6px;
+$button-font-size:        14px;
+$button-space:            16px;
+
+// button syntax
+// class-name : value1:bg, value2:text-color
+// ==========================================================================
+$button-colors: (
+        "success" :     (#22c55e, #fff),
+        "warning" :     (#fde047, #333),
+        "danger" :      (#dc2626, #fff),
+        "info" :        (#0ea5e9, #fff),
+        "dark" :        (#18181b, #fff),
+        "white" :       (#fff, #fff)
+);
+
+// Button Fixed
+// ==========================================================================
+%button-fixed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: $button-font-size;
+  font-weight: 500;
+  height: $button-height;
+  min-width: 82px;
+  border-radius: $button-border-radius;
+  border: none;
+  padding: 0 $button-space;
+  cursor: pointer;
+  transition: all .3s ease;
+  transition-duration: .3s;
+}
+
+// Button Controller
+// ==========================================================================
+.btn {
+  @extend %button-fixed;
+
+  @each $key, $value in $button-colors {
+    // default
+    &-#{$key} {
+      background-color: nth($value, 1);
+      color: nth($value, 2);
+
+      &:hover {
+        background-color: darken(nth($value, 1), 10%);
+      }
+    }
+    // outline
+    &-outline-#{$key} {
+      background-color: transparent;
+      border:1px solid nth($value, 1);
+      color: nth($value, 1);
+
+      &:hover {
+        color: nth($value, 2);
+        background-color: nth($value, 1);
+      }
+    }
+  }
+}
